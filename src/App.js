@@ -1,11 +1,11 @@
 import './App.css';
-import HookUseState from './Component/HookUseState'
+import UseEffectHook from './Component/UseEffectHook'
 
 function App() {
   
   return (
     <div className="App">
-      <HookUseState/>
+      <UseEffectHook/>
     </div>
   );
 }
