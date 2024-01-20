@@ -1,11 +1,11 @@
 import './App.css';
-import Event from './Component/Event';
+import HookUseState from './Component/HookUseState'
 
 function App() {
   
   return (
     <div className="App">
-      <Event/>
+      <HookUseState/>
     </div>
   );
 }
