@@ -5,12 +5,14 @@ const UseEffectHook = ()=>{
     const [count, setCount] = useState(0);
     let [timer, setTimer] = useState(0);
 
+    // This will run on every render
     useEffect (()=>{
        setTimeout(()=>{
         setCount((count)=>count+1);
        }, 1000)
     })
 
+    // we provide it an empty array so it can run on first render
     useEffect(()=>{
         setTimeout(()=>{
             setTimer ((timer)=timer+1);
