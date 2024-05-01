@@ -1,16 +1,15 @@
 import './App.css';
-import About from './Component/About';
-import Home from './Component/Home';
-import NoteState from './Context/NoteState';
+import Home from './Component/NoRender';
+import TrackStateChange from './Component/TrackStateChange';
 
 function App() {
 
   return (
     <div className="App">
-      <NoteState>
+        <h1>No rerender</h1>
         <Home />
-        <About />
-      </NoteState>
+        <h1>TrackStateChange</h1>
+        <TrackStateChange/>
     </div>
   );
 }
