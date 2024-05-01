@@ -1,17 +1,16 @@
 import './App.css';
-import GetDataFromAPI from './Component/GetDataFromAPI';
-import PageSize from './Component/PageSize';
-import PostDataToDatabase from './Component/PostDataToDatabase'
+import About from './Component/About';
+import Home from './Component/Home';
+import NoteState from './Context/NoteState';
 
 function App() {
-  
+
   return (
     <div className="App">
-      {/* <h1>Get data from API</h1> */}
-      {/* <GetDataFromAPI/> */}
-      {/* <h1>Post data to API</h1> */}
-      {/* <PostDataToDatabase/> */}
-      <PageSize/>
+      <NoteState>
+        <Home />
+        <About />
+      </NoteState>
     </div>
   );
 }
