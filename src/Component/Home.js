@@ -1,36 +1,39 @@
-import React, { useCallback } from 'react'
-import { useState } from 'react'
-import Todos from './Todos';
+import React from 'react'
+import { useState, useMemo } from 'react'
 
 const Home = () => {
+    const [myNum, setMyNum] = useState(0);
+    const [show, setShow] = useState(true);
 
-    const [count, setCount] = useState(0);
-    const [todos, setTodos] = useState([]);
-
-    const increment = ()=>{
-        setCount(count+1);
+    const getValue=()=>{
+        return setMyNum(myNum+1);
     }
 
-    // By using useCallback website can't render the todo still we update it
-    // Only website render when we update todos
-    const addTodo = useCallback(()=>{
-        setTodos((prev)=>[...prev, 'new Entry']);
-    }, [todos])
+    const countNumber = (num)=>{
+        console.log("Count number", num);
+        for(let i=0; i<10000; i++){}
+            return num;
+    }
 
-    // without todo website render todos if it change state or not
-    // const addTodo=()=>{
-    //     setTodos((prev)=>[...prev, 'new Entry']);
-    // }
+    // countNumber will run only when we chenge the myNum
+    // This will increase the performance of the site
+    // It always return the memorized value
+    const checkData = useMemo(()=>{
+        return countNumber(myNum);
+    }, [myNum]);
+
+    // const checkData = countNumber(myNum);
 
   return (
     <div>
-        <h1>useCallback</h1>
-        <Todos todos={todos} addTodo={addTodo}/>
-        <hr/>
-        <div>
-            count:{count}
-            <button onClick={increment}>+</button>
-        </div>
+        <h1>useMemo</h1>
+        <button onClick={getValue} style={{backgroundColor:"red"}}>
+            Counter
+        </button>
+        <p>My new Number: {checkData}</p>
+        <button onClick={()=>setShow(!show)}>
+            {show?"You clicked me":"Click me plz"}
+        </button>
     </div>
   )
 }
