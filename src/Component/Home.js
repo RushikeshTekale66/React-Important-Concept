@@ -1,36 +1,38 @@
-import React, { useReducer } from 'react'
-
-const initialState =0;
-
-// it get two parameter as input one is state & second is action to be performed
-const reducer = (state, action) => {
-    console.log("Current State Value=>", state, " Which Operation performed=>",action);
-
-    if(action.type==="INCREMENT"){
-        return state+1;
-    }
-    if(action.type==="DECREMENT"){
-        return state-1;
-    }
-
-    return state;
-}
+import React, { useCallback } from 'react'
+import { useState } from 'react'
+import Todos from './Todos';
 
 const Home = () => {
 
-    // const [count, setCount] = useState(0);
-    const [state, dispatch] =  useReducer(reducer, initialState);
+    const [count, setCount] = useState(0);
+    const [todos, setTodos] = useState([]);
 
-    return (
+    const increment = ()=>{
+        setCount(count+1);
+    }
+
+    // By using useCallback website can't render the todo still we update it
+    // Only website render when we update todos
+    const addTodo = useCallback(()=>{
+        setTodos((prev)=>[...prev, 'new Entry']);
+    }, [todos])
+
+    // without todo website render todos if it change state or not
+    // const addTodo=()=>{
+    //     setTodos((prev)=>[...prev, 'new Entry']);
+    // }
+
+  return (
+    <div>
+        <h1>useCallback</h1>
+        <Todos todos={todos} addTodo={addTodo}/>
+        <hr/>
         <div>
-            <h1>Use Reducer</h1>
-            <p>{state}</p>
-            <div>
-                <button onClick={()=>dispatch({type:"INCREMENT"})}>Increment</button>
-                <button onClick={()=>dispatch({type:"DECREMENT"})}>Decrement</button>
-            </div>
+            count:{count}
+            <button onClick={increment}>+</button>
         </div>
-    )
+    </div>
+  )
 }
 
 export default Home
