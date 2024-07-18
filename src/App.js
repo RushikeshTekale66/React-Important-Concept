@@ -1,19 +1,17 @@
 import './App.css';
-import { useContext } from 'react';
-import Counter from './Component/Counter';
-import {ConterContext} from "./Context/Counter"
+import Cart from './Component/cart';
+import Item from './Component/item';
+
 
 function App() {
-  //we can get the context & use the value of it
-  const conterState = useContext(ConterContext);
 
   return (
     <div className="App">
-       <h1>{conterState.count}</h1>
-       <Counter/>
-       <Counter/>
-       <Counter/>
-       <Counter/>
+      <h1>useContext</h1>
+       <Item name ="Laptop" price ={100}/>
+       <Item name ="Mobile" price ={10}/>
+       <Item name ="Bike" price ={1000}/>
+       <Cart/>
     </div>
   );
 }
