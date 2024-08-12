@@ -2,31 +2,30 @@ import React, { useState } from 'react'
 
 const GetTask = () => {
     const [task, setTask] = useState('');
-    const [taskList, setTaskList] = useState([]);
+    const [List, setList] = useState([]);
 
-    const addTask = (task) => {
-        if (task !== '') {
-            setTaskList([...taskList, task]);
+    const addTask = (task)=>{
+        if(task!==''){
+            setList([...List, task]);
+            console.log(task);
+            
         }
     }
-
-    return (
+  return (
+    <div>
         <div>
-            <div>
-                <input type='text' value={task} onChange={e => {setTask(e.target.value)}} />
-                <button type='button' onClick={()=>{addTask(task)}}
-                >Submit</button>
-            </div>
-            <div>
-                {
-                    taskList.map((list, i) => {
-                        return <li key={i}>{list}</li>
-                    })
-                }
-            </div>
-
+            <input type='text' value={task} onChange={(e)=>setTask(e.target.value)}/>
+            <button type='submit' onClick={()=>addTask(task)}>Submit Task</button>
         </div>
-    )
+        <div>
+            {
+                List.map((list, i)=>{
+                    return <p >{list}</p>
+                })
+            }
+        </div>
+    </div>
+  )
 }
 
-export default GetTask;
+export default GetTask
