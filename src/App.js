@@ -1,17 +1,14 @@
 import './App.css';
-import Cart from './Component/cart';
-import Item from './Component/item';
+import GetTask from './Component/getTask';
 
 
 function App() {
 
   return (
     <div className="App">
-      <h1>useContext</h1>
-       <Item name ="Laptop" price ={100}/>
-       <Item name ="Mobile" price ={10}/>
-       <Item name ="Bike" price ={1000}/>
-       <Cart/>
+      <h1>Task Manager</h1>
+      <GetTask/>
+       
     </div>
   );
 }
