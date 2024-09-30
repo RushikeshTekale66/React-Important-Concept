@@ -1,10 +1,10 @@
-import Event from "./Component/Event";
+import State from "./Component/State";
 
 const App = () => {
   return (
     <>
       <h1>Hi Rushikesh Tekale</h1>
-      <Event/>
+      <State/>
     </>
   )
 }
