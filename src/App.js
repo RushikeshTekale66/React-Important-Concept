@@ -1,23 +1,17 @@
-import { useState } from 'react';
-import './App.css';
+import Props from "./Component/Props";
 
-
-function App() {
-  const [count, setCount] = useState(1);
-
-  let multiplication = count * 5;
-
-  let multiplybyfive = ()=>{
-        setCount(count+1)
+const App = () => {
+  const city = "Pune";
+  const state = {
+    name: "Rushikesh",
+    lname: "Tekale"
   }
-
   return (
-    <div className="App">
-        <h1>Main Count {count}</h1>
-        <button onClick={multiplybyfive}>Click Me</button>
-        <h1>Update Count {multiplication}</h1>
-    </div>
-  );
+    <>
+      <h1>Hi Rushikesh Tekale</h1>
+      <Props name={state.name} lname={state.lname} city={city} like="Coding" />
+    </>
+  )
 }
 
 export default App;
