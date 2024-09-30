@@ -1,15 +1,10 @@
-import Props from "./Component/Props";
+import Event from "./Component/Event";
 
 const App = () => {
-  const city = "Pune";
-  const state = {
-    name: "Rushikesh",
-    lname: "Tekale"
-  }
   return (
     <>
       <h1>Hi Rushikesh Tekale</h1>
-      <Props name={state.name} lname={state.lname} city={city} like="Coding" />
+      <Event/>
     </>
   )
 }
