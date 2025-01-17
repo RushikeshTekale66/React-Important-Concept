@@ -1,13 +1,11 @@
-import { Statehhook } from "./Components/Statehhook";
+import Login from "./Components/Login";
 
-const App = (props) => {
-  let title = props.color;
-  console.log("Title color is " , title);
+const App = () => {
   
   return (
     <>
       <h1>Hi Rushikesh Tekale</h1>
-      <Statehhook title = {title}/>
+      <Login/>
     </>
   )
 }
