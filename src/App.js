@@ -1,11 +1,11 @@
-import Login from "./Components/Login";
+import AuthForm from "./Components/AuthForm";
+import './App.css';
 
 const App = () => {
   
   return (
     <>
-      <h1>Hi Rushikesh Tekale</h1>
-      <Login/>
+      <AuthForm/>
     </>
   )
 }
