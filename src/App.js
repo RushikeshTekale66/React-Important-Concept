@@ -1,12 +1,12 @@
-import AuthForm from "./Components/AuthForm";
 import './App.css';
+import {ImageConverter} from "./Components/ImageConverter"
 
 const App = () => {
   
   return (
-    <>
-      <AuthForm/>
-    </>
+    <div className='app'>
+      <ImageConverter/>
+    </div>
   )
 }
 
