@@ -3,14 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import NoteState from './Context/Notes/NoteState';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-  <React.StrictMode>
+  <NoteState>
       <App />
-  </React.StrictMode>
+  </NoteState>
 );
 
 reportWebVitals();

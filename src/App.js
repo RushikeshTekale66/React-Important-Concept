@@ -1,11 +1,15 @@
 import './App.css';
-import {ImageConverter} from "./Components/ImageConverter"
+import { About } from './Components/About';
+import { Home } from './Components/Home';
+import { Nav } from './Components/Nav';
 
 const App = () => {
   
   return (
     <div className='app'>
-      <ImageConverter/>
+      {/* <Nav/> */}
+      <Home/>
+      <About/>
     </div>
   )
 }
